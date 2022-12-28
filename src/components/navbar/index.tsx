@@ -28,13 +28,13 @@ export default function Navbar() {
   const downloadCV = () => {
     var link = document.createElement("a");
     link.download = "cv";
-    link.href = "/CV.pdf";
+    link.href = "/docs/CV.pdf";
     link.click();
   };
 
   return (
-    <div className={`${color} transition-all duration-600 z-50 w-full fixed top-0 left-0 py-2 px-4 flex justify-between lg:px-48`}>
-      <Image src="/name-white.png" alt="logo" width={72} height={32} />
+    <div className={`${color} transition-all duration-100 z-50 w-full fixed top-0 left-0 py-2 px-4 flex justify-between lg:px-48`}>
+      <Image src="/images/name-white.png" alt="logo" width={72} height={32} />
 
       <div className="flex place-items-center">
         <ThemeButton />

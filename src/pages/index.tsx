@@ -100,7 +100,7 @@ export default function Home() {
           <div className="flex flex-col-reverse lg:flex-row place-content-center gap-6 mt-16">
             <div className="mt-6 mb-16 w-full lg:w-80 lg:mx-14 flex flex-col place-items-center place-content-center lg:justify-between gap-6">
               <ContactCard href="mailto: willianlouza@gmail.com" isEmail={true}/>
-              <ContactCard href=" https://wa.me/+5521965597809" isEmail={false} />
+              <ContactCard href="https:/wa.me/+5521965597809" isEmail={false} />
             </div>
 
             <ContactForm />
