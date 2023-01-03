@@ -1,7 +1,8 @@
+import Link from "next/link";
 import { TbArrowUpRight } from "react-icons/tb";
 export default function ContactButton() {
   return (
-    <a
+    <Link
       href="#contato"
       className="group flex max-w-fit drop-shadow-md shadow-white group"
     >
@@ -9,6 +10,6 @@ export default function ContactButton() {
         <p>Contato</p>
         <TbArrowUpRight />
       </span>
-    </a>
+    </Link>
   );
 }

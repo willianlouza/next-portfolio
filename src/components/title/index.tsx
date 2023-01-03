@@ -8,7 +8,7 @@ export default function Title() {
   return (
     <div className="flex flex-col gap-2 text-center lg:max-w-max lg:text-left lg:gap-6">
       <div>
-        <GradientText value="Willian Louza" textClass="text-5xl font-bold lg:text-6xl"/>
+        <GradientText value="Willian Louza" textClass="text-5xl font-bold lg:text-7xl"/>
         {/* <h1 className="text-emerald-500 text-5xl font-black lg:text-8xl">Willian Louza</h1> */}
         <h1 className="text-2xl font-bold lg:text-6xl">Desenvolvedor Fullstack</h1>
       </div>

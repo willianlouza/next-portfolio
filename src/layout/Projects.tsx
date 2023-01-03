@@ -25,7 +25,7 @@ export default function Projects() {
   }, []);
 
   return (
-    <Section ref={sectionRef} className="flex flex-col flex-nowrap gap-12 mb-24 place-items-center place-content-center">
+    <Section ref={sectionRef} className="flex flex-col flex-nowrap gap-12 mb-24 place-items-center place-content-start py-18 lg:place-content-center">
       <GradientText value="Projetos" textClass="text-3xl lg:text-5xl font-bold" />
       <div className="flex flex-col gap-6 lg:flex-row">{isVisible && <ProjectGrid />}</div>
     </Section>

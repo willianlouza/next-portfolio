@@ -28,10 +28,10 @@ export default function Experience() {
     <Section
       ref={sectionRef}
       id="exp"
-      className="flex flex-col flex-nowrap gap-12 place-items-center  place-content-center"
+      className="flex flex-col flex-nowrap gap-12 place-items-center place-content-start py-32 lg:place-content-center lg:py-0"
     >
       <GradientText value="Experiência" textClass="text-3xl lg:text-5xl font-bold" />
-      <div className="flex flex-col gap-6 w-full  place-content-center lg:flex-row lg:w-2/3 ">
+      <div className="flex flex-col gap-6 w-full  place-content-center lg:flex-row lg:w-2/3">
         {isVisible && (
           <>
             <FadeContainer direction="right" className="w-full">
