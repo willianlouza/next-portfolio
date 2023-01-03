@@ -41,7 +41,7 @@ export default function ContactForm(props: IProps) {
         id="nome"
         required
         placeholder="Seu nome"
-        className="border bg-transparent border-primary p-3 my-2"
+        className="border bg-transparent border-cyan-500 p-3 my-2 focus:outline-none focus:border-cyan-300"
       />
       <input
         type="text"
@@ -49,7 +49,7 @@ export default function ContactForm(props: IProps) {
         id="assunto"
         required
         placeholder="Assunto"
-        className="border bg-transparent border-primary p-3 my-2"
+        className="border bg-transparent border-cyan-500 p-3 my-2 focus:outline-none focus:border-cyan-300"
       />
       <textarea
         placeholder="Mensagem"
@@ -57,7 +57,7 @@ export default function ContactForm(props: IProps) {
         id="mensagem"
         cols={30}
         rows={10}
-        className="resize-none border bg-transparent border-primary p-3 my-2"
+        className="resize-none border bg-transparent border-cyan-500 p-3 my-2 focus:outline-none focus:border-cyan-300"
         required
       ></textarea>
       <ButtonSendMail  sended={sended} sending={sending} />

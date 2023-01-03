@@ -12,7 +12,7 @@ interface IProps {
 }
 export default function ProjectCard(props: IProps) {
   return (
-    <div className="bg-gradient-to-r from-pink-600 to-purple-600 pt-0.5">
+    <div className="bg-gradient-to-r from-emerald-500 to-cyan-500 pt-0.5 shadow-lg">
       <div className="group bg-neutral-900 p-4 flex flex-col gap-4">
         <div className="bg-black h-48 overflow-hidden">
           <Image

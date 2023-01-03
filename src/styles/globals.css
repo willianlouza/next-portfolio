@@ -8,8 +8,7 @@
   }
 }
 body {
-  color: white;
-  background: black;
+  background-color: #0e0e0e;
   scroll-snap-type: y mandatory;
 }
 * {

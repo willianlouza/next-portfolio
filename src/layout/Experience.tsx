@@ -3,10 +3,8 @@ import FadeContainer from "../components/base/fade-container";
 import Section from "../components/base/section";
 import GradientText from "../components/gradient-text";
 import ExperienceCard from "../components/experience-card";
-interface IProps{
-  visible?: boolean;
-}
-export default function Experience(props:IProps) {
+
+export default function Experience() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
@@ -30,11 +28,11 @@ export default function Experience(props:IProps) {
     <Section
       ref={sectionRef}
       id="exp"
-      className="flex flex-col flex-nowrap gap-12 place-items-center place-content-center"
+      className="flex flex-col flex-nowrap gap-12 place-items-center  place-content-center"
     >
       <GradientText value="Experiência" textClass="text-3xl lg:text-5xl font-bold" />
-      <div className="flex flex-col gap-6 lg:flex-row lg:w-2/3">
-        {(isVisible || props.visible) && (
+      <div className="flex flex-col gap-6 w-full  place-content-center lg:flex-row lg:w-2/3 ">
+        {isVisible && (
           <>
             <FadeContainer direction="right" className="w-full">
               <ExperienceCard

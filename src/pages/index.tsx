@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { useState } from "react";
 import Navbar from "../components/navbar";
 import Greet from "../layout/Greet";
 import Experience from "../layout/Experience";
@@ -8,10 +7,6 @@ import Contact from "../layout/Contact";
 import Footer from "../components/footer";
 
 export default function Home() {
-  const [visible, setVisible] = useState(false);
-  const handleContactClick = () => {
-    setVisible(true);
-  };
   return (
     <>
       <Head>
@@ -25,10 +20,10 @@ export default function Home() {
         <Navbar className="px-6 py-6 lg:px-32" />
       </header>
       <main className="snap-y snap-mandatory">
-        <Greet onClick={handleContactClick} />
-        <Experience visible={visible} />
-        <Projects visible={visible} />
-        <Contact visible={visible} />
+        <Greet  />
+        <Experience />
+        <Projects  />
+        <Contact  />
         <Footer />
       </main>
     </>

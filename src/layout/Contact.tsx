@@ -4,10 +4,8 @@ import ContactForm from "../components/contact-form";
 import FadeContainer from "../components/base/fade-container";
 import Section from "../components/base/section";
 import GradientText from "../components/gradient-text";
-interface IProps {
-  visible?: boolean;
-}
-export default function Contact(props: IProps) {
+
+export default function Contact() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
@@ -31,11 +29,11 @@ export default function Contact(props: IProps) {
     <Section
       ref={sectionRef}
       id="contato"
-      className="flex pt-32 pb-6 lg:pt-0 flex-col flex-nowrap gap-12 place-items-center place-content-center"
+      className="flex pb-6 flex-col flex-nowrap gap-12 place-items-center place-content-center"
     >
       <GradientText value="Contato" textClass="text-3xl lg:text-5xl font-bold" />
       <div className="flex flex-col-reverse gap-6 lg:gap-32 lg:flex-row place-items-center">
-        {(isVisible || props.visible) && (
+        {isVisible && (
           <>
             <div className="flex flex-col gap-6 px-5 w-full lg:w-auto">
               <FadeContainer direction="right">

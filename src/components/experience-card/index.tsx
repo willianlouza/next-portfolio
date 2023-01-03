@@ -7,7 +7,7 @@ interface IProps {
 }
 export default function ExperienceCard(props: IProps) {
   return (
-    <div className="pt-0.5 bg-gradient-to-r from-pink-600 via-rose-400 to-purple-500 w-full">
+    <div className="pt-0.5 bg-gradient-to-r from-emerald-500 to-cyan-500 w-full shadow-lg">
       <div className="group bg-neutral-900 px-6 py-6 lg:py-12 flex flex-col gap-6">
         <div className="flex place-content-center place-items-center">
           <h3 className="text-primary text-xl font-bold relative lg:text-2xl">
