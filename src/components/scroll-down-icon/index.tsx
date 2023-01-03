@@ -1,4 +1,4 @@
-import { MdKeyboardArrowDown } from "react-icons/md";
+import { SlMouse } from "react-icons/sl";
 
 interface IProps {
   className?: string;
@@ -6,14 +6,13 @@ interface IProps {
 export default function ScrollDownIcon(props: IProps) {
   return (
     <div
-      className={`${props.className} hover:text-primary flex flex-col place-items-center animate-bounce cursor-pointer`}
+      className={`${props.className} absolute bottom-4 left-[calc(50%-.75rem)] hover:text-rose-600 flex flex-col place-items-center animate-bounce cursor-pointer`}
       onClick={() => {
         const exp = document.getElementById("exp");
-        exp?.scrollIntoView({block: 'start'});
+        exp?.scrollIntoView({ block: "start" });
       }}
     >
-      <span>Scroll</span>
-      <MdKeyboardArrowDown className="w-6 h-6" />
+      <SlMouse className="w-6 h-6" />
     </div>
   );
 }

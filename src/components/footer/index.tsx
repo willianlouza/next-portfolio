@@ -1,14 +1,15 @@
-import FooterTitle from "../footer-title";
-
+import Image from "next/image";
+import Link from "next/link";
+import { BsGithub } from "react-icons/bs";
 export default function Footer() {
   return (
-    <footer className="z-10 px-4 lg:px-9 flex place-items-end text-left py-6 lg:py-4 relative h-40  mt-12">
-      <div>
-        <div className="animate-wave-1 bg-link rounded-wave w-[200%] h-28 lg;h-32 absolute bottom-0 left-0  -z-10"></div>
-        <div className="animate-wave-2 bg-link/25 rounded-wave w-[200%] h-28 lg:h-32 absolute bottom-2 lg:bottom-0 left-0 -z-20"></div>
-        <div className="animate-wave-3 bg-link/25 rounded-wave w-[200%] h-28 lg:h-32 absolute bottom-4 left-0 -z-30"></div>
+    <footer className="flex pt-0.5 bg-gradient-to-r from-purple-600 via-pink-600 to-rose-500">
+      <div className="flex-1 bg-neutral-900 px-6 flex place-content-between place-items-center">
+        <Image src="/images/name-white.png" alt="Logo" width={500} height={500} className="w-16" />
+        <Link href="https://github.com/willianlouza" target="_blank">
+          <BsGithub className="w-8 h-8" />
+        </Link>
       </div>
-      <FooterTitle />
     </footer>
   );
 }

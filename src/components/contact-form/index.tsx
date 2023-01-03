@@ -1,8 +1,10 @@
 import React, { useRef, useState } from "react";
 import emailjs from "emailjs-com";
-import { BiLoaderAlt } from "react-icons/bi";
-
-export default function ContactForm() {
+import ButtonSendMail from "../button/btn-send-mail";
+interface IProps {
+  className?: string;
+}
+export default function ContactForm(props: IProps) {
   const form = useRef(null);
   const [sending, setSending] = useState(false);
   const [sended, setSended] = useState(false);
@@ -20,7 +22,7 @@ export default function ContactForm() {
           setSended(true);
           setTimeout(() => {
             setSended(false);
-          }, 3000)
+          }, 3000);
         },
         (error) => {
           console.log(error.text);
@@ -32,14 +34,14 @@ export default function ContactForm() {
   };
 
   return (
-    <form ref={form} onSubmit={sendEmail} className="flex flex-col w-full lg:w-[40rem]">
+    <form ref={form} onSubmit={sendEmail} className={`${props.className} flex flex-col w-full`}>
       <input
         type="text"
         name="nome"
         id="nome"
         required
         placeholder="Seu nome"
-        className="border bg-transparent border-primary p-3 rounded-md my-2"
+        className="border bg-transparent border-primary p-3 my-2"
       />
       <input
         type="text"
@@ -47,7 +49,7 @@ export default function ContactForm() {
         id="assunto"
         required
         placeholder="Assunto"
-        className="border bg-transparent border-primary p-3 rounded-md my-2"
+        className="border bg-transparent border-primary p-3 my-2"
       />
       <textarea
         placeholder="Mensagem"
@@ -55,25 +57,10 @@ export default function ContactForm() {
         id="mensagem"
         cols={30}
         rows={10}
-        className="resize-none border bg-transparent border-primary p-3 rounded-md my-2"
+        className="resize-none border bg-transparent border-primary p-3 my-2"
         required
       ></textarea>
-      <button
-        type="submit"
-        className="bg-primary text-light lg:w-36 w-full h-12
-       hover:text-dark font-semibold px-6 py-2 rounded-sm border border-primary
-        hover:bg-light hover:border-light transition-colors duration-150 my-2"
-      >
-        {sending ? (
-          <div className="flex flex-1 place-content-center place-items-center animate-spin">
-            <BiLoaderAlt className="" />
-          </div>
-        ) : sended ? (
-          <>Enviado!</>
-        ) : (
-          <>Enviar</>
-        )}
-      </button>
+      <ButtonSendMail  sended={sended} sending={sending} />
     </form>
   );
 }

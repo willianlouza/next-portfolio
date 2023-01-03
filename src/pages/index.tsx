@@ -1,20 +1,17 @@
 import Head from "next/head";
-import Image from "next/image";
-import Avatar from "../components/avatar";
+import { useState } from "react";
 import Navbar from "../components/navbar";
-import Title from "../components/title";
-import { BsGithub } from "react-icons/bs";
-import ButtonOutlined from "../components/button/outlined";
-import ScrollDownIcon from "../components/scroll-down-icon";
-import ExperienceCard from "../components/xp-card";
-import ProjectCard from "../components/project-card";
-import ScrollTopIcon from "../components/scroll-top-icon";
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import ContactCard from "../components/contact-card";
-import ContactForm from "../components/contact-form";
+import Greet from "../layout/Greet";
+import Experience from "../layout/Experience";
+import Projects from "../layout/Projects";
+import Contact from "../layout/Contact";
+import Footer from "../components/footer";
 
 export default function Home() {
+  const [visible, setVisible] = useState(false);
+  const handleContactClick = () => {
+    setVisible(true);
+  };
   return (
     <>
       <Head>
@@ -24,90 +21,15 @@ export default function Home() {
         <meta name="color-scheme" content="dark light" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
-      <main>
-        <section id="home" className="min-h-screen flex place-content-center text-center">
-          <ScrollDownIcon className="absolute bottom-0 left-[calc(50% - 1.75rem)] w-14" />
-          <div className="flex-1 flex flex-col justify-center place-items-center  ">
-            <div>
-              <Title />
-              <div className="flex flex-col my-4 place-items-center ">
-                <Link href="https://github.com/willianlouza" target="_blank">
-                  <BsGithub className="w-8 h-8 cursor-pointer" />
-                </Link>
-                <ButtonOutlined
-                  className="w-32 my-4"
-                  text="Contato"
-                  onClick={() => {
-                    const contact = document.getElementById("contato");
-                    contact?.scrollIntoView();
-                  }}
-                />
-              </div>
-            </div>
-            <Avatar />
-          </div>
-        </section>
-
-        <section id="exp" className="min-h-screen text-center flex flex-col place-content-center">
-          <h1 className="text-primary text-3xl font-bold">Experiência</h1>
-
-          <div className="flex flex-wrap place-content-center gap-6 mt-16">
-            <ExperienceCard role="Frontend" stacks={["HTML", "CSS", "JavaScript", "React", "Tailwind", "TypeScript"]} />
-            <ExperienceCard role="Backend" stacks={["Node JS", "Postgres", "Express", "MySQL", "Prisma"]} />
-          </div>
-        </section>
-
-        <section id="portfolio" className="min-h-screen text-center flex flex-col place-content-center lg:py-0 py-10">
-          <h1 className="text-primary text-3xl font-bold">Portfólio</h1>
-          <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 place-items-center gap-6 place-content-center m-auto lg:w-auto w-full">
-            <ProjectCard
-              tags={["React", "Tailwind", "Express"]}
-              hasDemo={false}
-              description="Banco virtual em Docker feito com React e Express."
-              image="/images/bank.png"
-              githubURL="https://github.com/willianlouza/fullstack-app-bank"
-            />
-            <ProjectCard
-              tags={["React", "Tailwind"]}
-              hasDemo={true}
-              description="Previsão do tempo usando a API Open Weather Map."
-              image="/images/weather.png"
-              githubURL="https://github.com/willianlouza/weather-app-react"
-              demoURL="https://willianlouza.github.io/weather-app-react/"
-            />
-            <ProjectCard
-              tags={["React", "Express", "Prisma"]}
-              hasDemo={true}
-              description="Projeto Blog feito com React e Express."
-              image="/images/blog.png"
-              githubURL="https://github.com/willianlouza/vite-blog"
-              demoURL="https://willianlouza.github.io/vite-blog/"
-            />
-            <ProjectCard
-              tags={["React", "Styled Components"]}
-              hasDemo={true}
-              description="Projeto Pokedéx usando a API PokeAPI."
-              image="/images/pokedex.png"
-              githubURL="https://github.com/willianlouza/pokedex-react"
-              demoURL="https://willianlouza.github.io/pokedex-react/"
-            />
-          </div>
-        </section>
-
-        <section id="contato" className="min-h-screen text-center flex flex-col place-content-center lg:py-0 py-10">
-          <h1 className="text-primary text-3xl font-bold">Contato</h1>
-          <div className="flex flex-col-reverse lg:flex-row place-content-center gap-6 mt-16">
-            <div className="mt-6 mb-16 w-full lg:w-80 lg:mx-14 flex flex-col place-items-center place-content-center lg:justify-between gap-6">
-              <ContactCard href="mailto: willianlouza@gmail.com" isEmail={true}/>
-              <ContactCard href="https:/wa.me/+5521965597809" isEmail={false} />
-            </div>
-
-            <ContactForm />
-          </div>
-        </section>
-
-        <ScrollTopIcon className="fixed bottom-4 right-4 " />
+      <header>
+        <Navbar className="px-6 py-6 lg:px-32" />
+      </header>
+      <main className="snap-y snap-mandatory">
+        <Greet onClick={handleContactClick} />
+        <Experience visible={visible} />
+        <Projects visible={visible} />
+        <Contact visible={visible} />
+        <Footer />
       </main>
     </>
   );

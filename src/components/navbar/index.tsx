@@ -1,45 +1,16 @@
 import Image from "next/image";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
-import ThemeButton from "../theme-button";
-import ButtonFilled from "../button/filled";
-import ButtonOutlined from "../button/outlined";
-
-export default function Navbar() {
-  const [color, setColor] = useState("");
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const y = window.scrollY;
-      if (y > 0) {
-        setColor("bg-dark");
-      } else {
-        setColor("bg-transparent");
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const downloadCV = () => {
-    var link = document.createElement("a");
-    link.download = "cv";
-    link.href = "/docs/CV.pdf";
-    link.click();
-  };
-
+import Link from "next/link";
+import { BsGithub } from "react-icons/bs";
+interface IProps {
+  className?: string;
+}
+export default function Navbar(props: IProps) {
   return (
-    <div className={`${color} transition-all duration-100 z-50 w-full fixed top-0 left-0 py-2 px-4 flex justify-between lg:px-48`}>
-      <Image src="/images/name-white.png" alt="logo" width={72} height={32} />
-
-      <div className="flex place-items-center">
-        <ThemeButton />
-        <ButtonFilled text="Baixar CV" onClick={downloadCV} />
-      </div>
+    <div className={`${props.className} absolute top-0 left-0 w-full flex justify-between place-items-center`}>
+      <Image src="/images/name-white.png" alt="logo" width="500" height="500" className="w-14" />
+      <Link href="https://github.com/willianlouza" target="_blank">
+        <BsGithub className="w-8 h-8" />
+      </Link>
     </div>
   );
 }
