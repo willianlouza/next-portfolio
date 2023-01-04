@@ -24,14 +24,17 @@ export default function Contact() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [isVisible]);
   return (
     <Section
       ref={sectionRef}
       id="contato"
-      className="flex pb-6 py-6 flex-col flex-nowrap gap-12 place-items-center place-content-start lg:place-content-center"
+      className="flex pb-6 py-32 flex-col flex-nowrap gap-12 place-items-center place-content-start"
     >
+      <FadeContainer direction="top">
+
       <GradientText value="Contato" textClass="text-3xl lg:text-5xl font-bold" />
+      </FadeContainer>
       <div className="flex flex-col-reverse gap-6 lg:gap-32 lg:flex-row place-items-center">
         {isVisible && (
           <>

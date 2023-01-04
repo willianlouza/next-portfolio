@@ -24,7 +24,7 @@ export default function ExperienceCard(props: IProps) {
             {props.stacks.map((stack, index) => {
               return (
                 <div key={index} className="flex place-items-center">
-                  <BsFillPatchCheckFill className="text-primary w-5 h-5" />
+                  <BsFillPatchCheckFill className="text-cyan-400 w-5 h-5" />
                   <span className="ml-4 text-md lg:text-2xl text-neutral-400 font-semibold">{stack}</span>
                 </div>
               );

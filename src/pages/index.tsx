@@ -19,13 +19,13 @@ export default function Home() {
       <header>
         <Navbar className="px-6 py-6 lg:px-32" />
       </header>
-      <main className="snap-y snap-mandatory">
-        <Greet  />
+      <main>
+        <Greet />
         <Experience />
-        <Projects  />
-        <Contact  />
-        <Footer />
+        <Projects />
+        <Contact />
       </main>
+      <Footer />
     </>
   );
 }

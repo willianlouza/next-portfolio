@@ -9,7 +9,6 @@
 }
 body {
   background-color: #0e0e0e;
-  scroll-snap-type: y mandatory;
 }
 * {
   scroll-behavior: smooth;
@@ -22,15 +21,11 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
 }
-
 a {
   color: inherit;
   text-decoration: none;
   scroll-behavior: smooth;
 }
-section{
-  scroll-snap-align: start;
-}
-button{
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }

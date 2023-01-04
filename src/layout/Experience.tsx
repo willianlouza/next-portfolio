@@ -23,12 +23,12 @@ export default function Experience() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [isVisible]);
   return (
     <Section
       ref={sectionRef}
       id="exp"
-      className="flex flex-col flex-nowrap gap-12 place-items-center place-content-start py-32 lg:place-content-center lg:py-0"
+      className="flex flex-col flex-nowrap gap-12 place-items-center place-content-start py-32 lg:py-44"
     >
       <GradientText value="Experiência" textClass="text-3xl lg:text-5xl font-bold" />
       <div className="flex flex-col gap-6 w-full  place-content-center lg:flex-row lg:w-2/3">

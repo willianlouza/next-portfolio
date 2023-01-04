@@ -7,7 +7,7 @@ interface IProps {
 }
 const Section = React.forwardRef((props:IProps, ref:any) => {
   return (
-    <div ref={ref} id={props.id} className={`snap-start min-h-screen text-center px-6 ${props.className}`}>
+    <div ref={ref} id={props.id} className={`min-h-screen text-center px-6 ${props.className}`}>
       {props.children}
     </div>
   );
