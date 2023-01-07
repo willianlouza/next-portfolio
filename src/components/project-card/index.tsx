@@ -20,7 +20,7 @@ export default function ProjectCard(props: IProps) {
             alt="Project Image"
             width={500}
             height={500}
-            className="h-full w-full group-hover:scale-125 transition-transform duration-500"
+            className="h-full w-full object-cover group-hover:scale-125 transition-transform duration-500"
           />
         </div>
         <div className="flex flex-wrap">

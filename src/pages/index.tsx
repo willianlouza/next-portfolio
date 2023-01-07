@@ -1,9 +1,9 @@
 import Head from "next/head";
 import Navbar from "../components/navbar";
-import Greet from "../layout/Greet";
-import Experience from "../layout/Experience";
-import Projects from "../layout/Projects";
-import Contact from "../layout/Contact";
+import Greet from "../components/section/Greet";
+import Experience from "../components/section/Experience";
+import Projects from "../components/section/Projects";
+import Contact from "../components/section/Contact";
 import Footer from "../components/footer";
 
 export default function Home() {

@@ -1,7 +1,6 @@
-import FadeContainer from "../base/fade-container";
 import ProjectCard from "../project-card";
 import React from "react";
-
+import { motion } from "framer-motion";
 interface IProps {
   children?: React.ReactNode;
 }
@@ -9,7 +8,13 @@ interface IProps {
 export default function ProjectGrid(props: IProps) {
   return (
     <div className="flex flex-col lg:grid-cols-3 gap-6 lg:flex-row w-full">
-      <FadeContainer direction="top" className="lg:w-96">
+      <motion.div
+        initial={{ opacity: 0, translateY: "3rem" }}
+        whileInView={{ opacity: 1, translateY: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 1 }}
+        className="lg:w-96"
+      >
         <ProjectCard
           tags={["React", "Tailwind"]}
           hasDemo={true}
@@ -18,8 +23,14 @@ export default function ProjectGrid(props: IProps) {
           githubURL="https://github.com/willianlouza/weather-app-react"
           demoURL="https://willianlouza.github.io/weather-app-react/"
         />
-      </FadeContainer>
-      <FadeContainer direction="top" className="lg:w-96" delay=".5s">
+      </motion.div>
+      <motion.div
+         initial={{ opacity: 0, translateY: "3rem" }}
+         whileInView={{ opacity: 1, translateY: 0 }}
+         viewport={{ once: true, amount: 0.2 }}
+         transition={{ duration: 1 }}
+        className="lg:w-96"
+      >
         <ProjectCard
           tags={["React", "Express", "Prisma"]}
           hasDemo={true}
@@ -28,16 +39,23 @@ export default function ProjectGrid(props: IProps) {
           githubURL="https://github.com/willianlouza/vite-blog"
           demoURL="https://willianlouza.github.io/vite-blog/"
         />
-      </FadeContainer>
-      <FadeContainer direction="top" className="lg:w-96" delay="1s">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, translateY: "3rem" }}
+        whileInView={{ opacity: 1, translateY: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 1 }}
+        className="lg:w-96"
+      >
         <ProjectCard
-          tags={["React", "Express"]}
-          hasDemo={false}
-          description="Banco virtual em Docker feito com React e Express."
-          image="/images/bank.png"
-          githubURL="https://github.com/willianlouza/fullstack-app-bank"
+          tags={["Next", "Tailwind", "React"]}
+          hasDemo
+          description="Web Site moderno de Coffee Shop com Next JS."
+          image="/images/coffee-shop.jpg"
+          githubURL="https://github.com/willianlouza/next-coffee-shop"
+          demoURL="https://coffee-shop-gebp9oq8e-willianlouza.vercel.app/"
         />
-      </FadeContainer>
+      </motion.div>
     </div>
   );
 }
