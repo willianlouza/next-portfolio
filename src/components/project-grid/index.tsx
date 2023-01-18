@@ -32,12 +32,11 @@ export default function ProjectGrid(props: IProps) {
         className="lg:w-96"
       >
         <ProjectCard
-          tags={["React", "Express", "Prisma"]}
-          hasDemo={true}
-          description="Projeto Blog feito com React, Tailwind e Express."
+          tags={["Next JS", "Express", "Prisma"]}
+          hasDemo={false}
+          description="Blog fullstack usando Next JS e Express. Teste!"
           image="/images/blog.png"
-          githubURL="https://github.com/willianlouza/vite-blog"
-          demoURL="https://willianlouza.github.io/vite-blog/"
+          githubURL="https://github.com/willianlouza/void-blog-fullstack"
         />
       </motion.div>
       <motion.div
