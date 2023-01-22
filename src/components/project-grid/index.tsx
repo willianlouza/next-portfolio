@@ -7,8 +7,8 @@ interface IProps {
 
 export default function ProjectGrid(props: IProps) {
   return (
-    <div className="flex flex-col lg:grid-cols-3 gap-6 lg:flex-row w-full">
-      <motion.div
+    <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 w-full">
+      {/* <motion.div
         initial={{ opacity: 0, translateY: "3rem" }}
         whileInView={{ opacity: 1, translateY: 0 }}
         viewport={{ once: true, amount: 0.2 }}
@@ -23,7 +23,7 @@ export default function ProjectGrid(props: IProps) {
           githubURL="https://github.com/willianlouza/weather-app-react"
           demoURL="https://willianlouza.github.io/weather-app-react/"
         />
-      </motion.div>
+      </motion.div> */}
       <motion.div
          initial={{ opacity: 0, translateY: "3rem" }}
          whileInView={{ opacity: 1, translateY: 0 }}
@@ -53,6 +53,22 @@ export default function ProjectGrid(props: IProps) {
           image="/images/coffee-shop.jpg"
           githubURL="https://github.com/willianlouza/next-coffee-shop"
           demoURL="https://coffee-shop-gebp9oq8e-willianlouza.vercel.app/"
+        />
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, translateY: "3rem" }}
+        whileInView={{ opacity: 1, translateY: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 1 }}
+        className="lg:w-96"
+      >
+        <ProjectCard
+          tags={["Next", "Tailwind", "React"]}
+          hasDemo
+          description="Inspetor de Pokédex com Next JS e Tailwind."
+          image="/images/home-lg.png"
+          githubURL="https://github.com/willianlouza/pokedex-react"
+          demoURL="https://next-pokedex-sand.vercel.app/"
         />
       </motion.div>
     </div>
