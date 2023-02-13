@@ -1,31 +1,20 @@
 import Head from "next/head";
-import Navbar from "../components/navbar";
-import Greet from "../components/section/Greet";
-import Experience from "../components/section/Experience";
-import Projects from "../components/section/Projects";
-import Contact from "../components/section/Contact";
+import Navbar from "../components/layout/navbar";
+import Greet from "../components/sections/Greet";
+import Experience from "../components/sections/Experience";
+import Projects from "../components/sections/Projects";
+import Contact from "../components/sections/Contact";
 import Footer from "../components/footer";
+import Background from "../components/layout/background";
+import Layout from "../components/layout/layout";
 
 export default function Home() {
   return (
-    <>
-      <Head>
-        <title>Willian Louza</title>
-        <meta name="description" content="Desenvolvedor Fullstack | Node | React | Tailwind | TypeScript | JavaScript | Express" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="color-scheme" content="dark light" />
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-      </Head>
-      <header>
-        <Navbar className="px-6 py-6 lg:px-32" />
-      </header>
-      <main>
-        <Greet />
-        <Experience />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
-    </>
+    <Layout>
+      <Greet />
+      <Experience />
+      <Projects />
+      <Contact />
+    </Layout>
   );
 }

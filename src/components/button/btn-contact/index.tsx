@@ -1,15 +1,15 @@
 import Link from "next/link";
-import { TbArrowUpRight } from "react-icons/tb";
+import { BsArrowRight } from "react-icons/bs";
 export default function ContactButton() {
   return (
-    <Link
+    <a
       href="#contato"
-      className="group flex max-w-fit drop-shadow-md shadow-white group"
+      className="group flex w-36 hover:w-40 hover:translate-x-2 transition-all duration-150 drop-shadow-lg bg-violet-500/20 border border-white/25 rounded-full backdrop-blur-md"
     >
-      <span className="px-6 py-3 flex place-items-center gap-1 flex-nowrap bg-gradient-to-r from from-cyan-500 to-emerald-500  group-hover:from-cyan-400 group-hover:to-emerald-400 rounded-md">
+      <span className="group m-auto font-light px-6 py-3 flex place-items-center gap-1 flex-nowrap">
         <p>Contato</p>
-        <TbArrowUpRight />
+        <BsArrowRight className="transition-transform duration-150 group-hover:translate-x-2" />
       </span>
-    </Link>
+    </a>
   );
 }

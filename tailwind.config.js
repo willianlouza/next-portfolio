@@ -9,8 +9,24 @@ module.exports = {
       fontFamily: {
         primary: ["var(--poppins-font)", ...fontFamily.sans],
         serif: ["var(--poppins-font)", ...fontFamily.serif],
-        mono: ["var(--fira-font)", ...fontFamily.mono]
       },
+      animation: {
+        move: "move 5.5s ease-in-out infinite alternate",
+        movealt: "movealt 5.5s ease-in-out infinite alternate",
+      },
+      keyframes: {
+        move: {
+          to: {
+            transform: "translate(-100%,-100%)"
+          }
+        },
+        movealt: {
+          to: {
+            transform: "translate(50%,50%)"
+          }
+
+        }
+      }
     },
   },
   plugins: [],

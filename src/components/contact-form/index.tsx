@@ -34,14 +34,14 @@ export default function ContactForm(props: IProps) {
   };
 
   return (
-    <form ref={form} onSubmit={sendEmail} className={`${props.className} flex flex-col w-full`}>
+    <form ref={form} onSubmit={sendEmail} className={`${props.className} flex flex-col gap-4 w-full`}>
       <input
         type="text"
         name="nome"
         id="nome"
         required
         placeholder="Seu nome"
-        className="border bg-transparent border-cyan-500 p-3 my-2 focus:outline-none focus:border-cyan-300"
+        className="border rounded-md bg-transparent border-violet-500 p-3 focus:outline-none focus:border-violet-300"
       />
       <input
         type="text"
@@ -49,7 +49,7 @@ export default function ContactForm(props: IProps) {
         id="assunto"
         required
         placeholder="Assunto"
-        className="border bg-transparent border-cyan-500 p-3 my-2 focus:outline-none focus:border-cyan-300"
+        className="border rounded-md  bg-transparent border-violet-500 p-3 focus:outline-none focus:border-violet-300"
       />
       <textarea
         placeholder="Mensagem"
@@ -57,10 +57,10 @@ export default function ContactForm(props: IProps) {
         id="mensagem"
         cols={30}
         rows={10}
-        className="resize-none border bg-transparent border-cyan-500 p-3 my-2 focus:outline-none focus:border-cyan-300"
+        className="resize-none rounded-md  border bg-transparent border-violet-500 p-3 focus:outline-none focus:border-violet-300"
         required
       ></textarea>
-      <ButtonSendMail  sended={sended} sending={sending} />
+      <ButtonSendMail sended={sended} sending={sending} />
     </form>
   );
 }

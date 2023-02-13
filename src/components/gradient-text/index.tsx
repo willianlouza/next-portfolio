@@ -1,13 +1,11 @@
-interface IProps{
-    value: string;
-    textClass?: string;
+interface IProps {
+  value: string;
+  textClass?: string;
 }
-export default function GradientText(props:IProps) {
+export default function GradientText(props: IProps) {
   return (
-    <div className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text py-2">
-      <h1 className={`${props.textClass} text-transparent`}>
-        {props.value}
-      </h1>
+    <div className="font-extrabold font-poppins bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-clip-text">
+      <h1 className={`${props.textClass} text-transparent`}>{props.value}</h1>
     </div>
   );
 }
