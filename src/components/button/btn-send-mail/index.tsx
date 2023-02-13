@@ -6,14 +6,19 @@ interface IProps {
 }
 export default function ButtonSendMail(props: IProps) {
   return (
-    <button type="submit" className="group flex w-32 hover:w-36 transition-all duration-150 drop-shadow-lg bg-violet-500/20 border border-white/25 rounded-full backdrop-blur-md">
+    <button
+      type="submit"
+      className={`${
+        props.sending ? "" : "hover:w-36"
+      } group flex w-32 transition-all duration-150 drop-shadow-lg bg-violet-500/20 border border-white/25 rounded-full backdrop-blur-md`}
+    >
       <span className="group flex-1 h-full font-light px-6 py-3 flex items-center gap-4 flex-nowrap">
         {props.sending ? (
           <div className="flex flex-1 place-content-center place-items-center animate-spin">
             <BiLoaderAlt className="" />
           </div>
         ) : props.sended ? (
-          <>Enviado!</>
+          <>Enviado !</>
         ) : (
           <>
             <p>Enviar</p>

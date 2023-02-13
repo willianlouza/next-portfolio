@@ -1,65 +1,72 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import ButtonSendMail from "../button/btn-send-mail";
+import { useForm } from "react-hook-form";
 interface IProps {
   className?: string;
 }
 export default function ContactForm(props: IProps) {
-  const form = useRef(null);
   const [sending, setSending] = useState(false);
   const [sended, setSended] = useState(false);
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+    reset,
+  } = useForm();
 
-  const sendEmail = (e: any) => {
-    if (!form.current) return;
-    e.preventDefault();
+  const sendEmail = (data: any) => {
     setSending(true);
-
     emailjs
-      .sendForm("portfolio-site", "template_sv6ti95", form.current, "NPIx3sZ-IVmge8m6n")
+      .send("portfolio-site", "template_sv6ti95", data, "NPIx3sZ-IVmge8m6n")
       .then(
         (result) => {
-          console.log(result.text);
           setSended(true);
           setTimeout(() => {
             setSended(false);
-          }, 3000);
+          }, 2000);
         },
-        (error) => {
-          console.log(error.text);
-        }
+        (error) => {}
       )
       .finally(() => {
         setSending(false);
+        reset();
       });
   };
 
   return (
-    <form ref={form} onSubmit={sendEmail} className={`${props.className} flex flex-col gap-4 w-full`}>
+    <form onSubmit={handleSubmit(sendEmail)} className={`${props.className} flex flex-col gap-4 w-full`}>
       <input
+        {...register("name", { required: true })}
         type="text"
-        name="nome"
-        id="nome"
-        required
+        name="name"
+        id="name"
         placeholder="Seu nome"
-        className="border rounded-md bg-transparent border-violet-500 p-3 focus:outline-none focus:border-violet-300"
+        className={`${
+          errors["name"] ? "border-red-500" : "border-violet-500 focus:border-violet-300"
+        } border rounded-md bg-transparent p-3 focus:outline-none`}
       />
       <input
+        {...register("subject", { required: true })}
         type="text"
-        name="assunto"
-        id="assunto"
-        required
+        name="subject"
+        id="subject"
         placeholder="Assunto"
-        className="border rounded-md  bg-transparent border-violet-500 p-3 focus:outline-none focus:border-violet-300"
+        className={`${
+          errors["subject"] ? "border-red-500" : "border-violet-500 focus:border-violet-300"
+        } border rounded-md bg-transparent p-3 focus:outline-none`}
       />
       <textarea
+        {...register("message", { required: true })}
         placeholder="Mensagem"
-        name="mensagem"
-        id="mensagem"
+        name="message"
+        id="message"
         cols={30}
         rows={10}
-        className="resize-none rounded-md  border bg-transparent border-violet-500 p-3 focus:outline-none focus:border-violet-300"
-        required
-      ></textarea>
+        className={`${
+          errors["message"] ? "border-red-500" : "border-violet-500 focus:border-violet-300"
+        } border rounded-md bg-transparent p-3 focus:outline-none resize-none`}
+      ></textarea>{" "}
       <ButtonSendMail sended={sended} sending={sending} />
     </form>
   );
