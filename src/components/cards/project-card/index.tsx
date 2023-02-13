@@ -1,7 +1,7 @@
 import Image from "next/image";
-import ButtonProjectDemo from "../button/btn-project-demo";
-import ButtonRepository from "../button/btn-repository";
-import Tag from "../tag";
+import ButtonProjectDemo from "../../button/btn-project-demo";
+import ButtonRepository from "../../button/btn-repository";
+import Tag from "../../tag";
 interface IProps {
   hasDemo: boolean;
   tags: string[];
@@ -12,8 +12,8 @@ interface IProps {
 }
 export default function ProjectCard(props: IProps) {
   return (
-    <div className="group bg-black/25 border backdrop-blur-md border-white/25 p-4 flex flex-col gap-4 rounded-lg">
-      <div className="bg-black h-48 overflow-hidden rounded-md">
+    <div className="group bg-black/25 border max-w-sm md:max-w-md backdrop-blur-md border-white/25 p-4 flex flex-col gap-4 rounded-lg">
+      <div className="bg-black shadow-md h-48 overflow-hidden rounded-md">
         <Image
           src={props.image}
           alt="Project Image"

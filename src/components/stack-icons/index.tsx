@@ -6,7 +6,6 @@ export default function StackIcons() {
       <Image src="/images/tailwind.png" alt="Tailwind Logo" width="512" height="512" className="w-6 h-6 lg:w-9 lg:h-9" />
       <Image src="/images/Node.png" alt="Node Logo" width="512" height="512" className="w-6 h-6 lg:w-9 lg:h-9" />
       <Image src="/images/prisma.png" alt="Unity Logo" width="512" height="512" className="w-6 h-6 lg:w-9 lg:h-9" />
-      <Image src="/images/js.png" alt="Unity Logo" width="512" height="512" className="w-6 h-6 lg:w-9 lg:h-9" />
       <Image src="/images/typescript.png" alt="Unity Logo" width="512" height="512" className="w-6 h-6 lg:w-9 lg:h-9" />
     </div>
   );

@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import ContactCard from "../contact-card";
+import ContactCard from "../cards/contact-card";
 import ContactForm from "../contact-form";
 import Section from "../layout/section";
-import GradientText from "../gradient-text";
 import { motion } from "framer-motion";
 export default function Contact() {
   const sectionRef = useRef<HTMLDivElement>(null);

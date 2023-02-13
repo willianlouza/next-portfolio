@@ -14,7 +14,7 @@ export default function Greet() {
       >
         <Title />
       </motion.div>
-      <ButtonScrollSection sectionId="exp" position="bottom-4 left-[calc(50%-.75rem)]" />
+      <ButtonScrollSection sectionId="exp" position="bottom-16 left-[calc(50%-.75rem)]" />
     </Section>
   );
 }

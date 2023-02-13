@@ -23,7 +23,7 @@ export default function Layout({ className, children }: Props) {
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       </Head>
       <header>
-        <Navbar className="px-6 py-2 lg:px-32" />
+        <Navbar />
       </header>
       <Background />
       <main className={`${className}`}>{children}</main>

@@ -8,7 +8,7 @@
   }
 }
 :root {
-  --glow: radial-gradient(circle, #6f01ff34 0%, #0141ff00 100%);
+  --glow: radial-gradient(circle, #6f01ff30 0%, #0141ff00 100%);
 }
 body {
   color: #fefefe;

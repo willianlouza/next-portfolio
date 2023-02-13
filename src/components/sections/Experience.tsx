@@ -1,18 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import Section from "../layout/section";
-import GradientText from "../gradient-text";
-import ExperienceCard from "../experience-card";
+import ExperienceCard from "../cards/experience-card";
 import { motion } from "framer-motion";
 
 export default function Experience() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   return (
-    <Section
-      ref={sectionRef}
-      id="exp"
-      className="flex flex-col flex-nowrap gap-12 place-items-center place-content-start py-32 lg:py-44"
-    >
+    <Section ref={sectionRef} id="exp" className="flex flex-col flex-nowrap gap-12 items-center justify-center">
       <h1 className="text-3xl lg:text-5xl font-bold">Experiência</h1>
       <div className="flex flex-col gap-6  place-content-center lg:flex-row lg:w-2/3">
         <motion.div

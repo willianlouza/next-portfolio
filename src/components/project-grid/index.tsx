@@ -1,4 +1,4 @@
-import ProjectCard from "../project-card";
+import ProjectCard from "../cards/project-card";
 import React from "react";
 import { motion } from "framer-motion";
 interface IProps {
