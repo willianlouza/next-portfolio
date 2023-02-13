@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import ContactCard from "../cards/contact-card";
 import ContactForm from "../contact-form";
 import Section from "../layout/section";

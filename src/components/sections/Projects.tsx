@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import Section from "../layout/section";
-import GradientText from "../gradient-text";
 import ProjectGrid from "../project-grid";
 
 export default function Projects() {

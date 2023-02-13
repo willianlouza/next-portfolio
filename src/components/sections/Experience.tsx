@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import Section from "../layout/section";
 import ExperienceCard from "../cards/experience-card";
 import { motion } from "framer-motion";
