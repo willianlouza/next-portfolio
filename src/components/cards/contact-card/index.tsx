@@ -24,9 +24,9 @@ export default function ContactCard(props: IProps) {
           <BsWhatsapp className="w-9 h-9 text-light" />
           <h3 className="text-2xl text-light">Whatsapp</h3>
           <span className="text-gray-400">(21) 96559-7809</span>
-          <Link className="text-violet-500 hover:text-violet-400" href={props.href} target="_blank">
+          <a className="text-violet-500 hover:text-violet-400" href={props.href} target="_blank">
             Enviar mensagem
-          </Link>
+          </a>
         </div>
       )}
     </div>
